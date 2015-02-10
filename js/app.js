@@ -22,8 +22,14 @@ $(document).ready(function() {
     })
     .mouseup(function(){
         $('.ryu-throwing').hide();
-        $('.ryu-ready').show();
-        
+        $('.ryu-ready').show();   
+    })
+    .keydown(function(e) {
+      if(e.key == 88)
+      {
+        $('ryu-posing').show();
+        $('ryu-ready').hide();
+      }
     });
 });
 
