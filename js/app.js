@@ -8,15 +8,38 @@ $(document).ready(function() {
        $('.ryu-ready').hide();
     })
     .mousedown(function() {
+        playHadouken();
         $('.ryu-ready').hide();
         $('.ryu-throwing').show();
+        $('.hadouken').finish().show().animate(
+            {left: '300px'},
+            500,
+            function() {
+                $(this).hide();
+                $(this).css('left', '-212px');
+            }
+        );
     })
     .mouseup(function(){
         $('.ryu-throwing').hide();
         $('.ryu-ready').show();
+        
     });
 });
 
+var playHadouken = function(){
+    $('#hadouken-sound')[0].volume = 0.5;
+    $('#hadouken-sound')[0].load();
+    $('#hadouken-sound')[0].play();
+}
+
+// var add = function(number1, number2, number3){
+//     return number1 + number2 + number3;   
+// }
+
+// add(23, 14, 87);
+
+// $('.hadouken').animate({left: '300px'}, 500, function(){})
 
 // var ryu = {
 //     size: 42,
