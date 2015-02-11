@@ -29,8 +29,8 @@ $(document).ready(function() {
         $('.ryu-ready').hide();
         $('.ryu-cool').show();
       }
-  });
-  $(document).keyup(function() {
+  })
+  .keyup(function() {
     $('.ryu-ready').hide();
     $('.ryu-still').show();
   })
