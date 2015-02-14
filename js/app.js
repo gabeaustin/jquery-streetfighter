@@ -1,38 +1,39 @@
 $(document).ready(function() {
-    $('.ryu').mouseenter(function() {
-        $('.ryu-still').hide();
-        $('.ryu-ready').show();
-    })
-    .mouseleave(function() {
-       $('.ryu-ready').hide();
-       $('.ryu-still').show();
-    })
-    .mousedown(function() {
-        playHadouken();
-        $('.ryu-ready').hide();
-        $('.ryu-throwing').show();
-        $('.hadouken').finish().show().animate(
-            {left: '300px'},
-            500,
-            function() {
-                $(this).hide();
-                $(this).css('left', '-212px');
-            }
-        );
-    })
-    .mouseup(function(){
-        $('.ryu-throwing').hide();
-        $('.ryu-ready').show();   
-    })
-    $(document).keydown(function(event) {
-      if(event.which == 88){
-        $('.ryu-ready').hide();
-        $('.ryu-cool').show();
-      }
+  $('.ryu').mouseenter(function() {
+      $('.ryu-still').hide();
+      $('.ryu-ready').show();
+  })
+  .mouseleave(function() {
+     $('.ryu-ready').hide();
+     $('.ryu-still').show();
+  })
+  .mousedown(function() {
+      playHadouken();
+      $('.ryu-ready').hide();
+      $('.ryu-throwing').show();
+      $('.hadouken').finish().show().animate(
+          {left: '300px'},
+          500,
+          function() {
+              $(this).hide();
+              $(this).css('left', '-212px');
+          }
+      );
+  })
+  .mouseup(function(){
+      $('.ryu-throwing').hide();
+      $('.ryu-ready').show();   
+  })
+  $(document).keydown(function(event) {
+    if(event.which == 88){
+      $('.ryu-ready').hide();
+      $('.ryu-still').hide();
+      $('.ryu-cool').show();
+    }
   })
   .keyup(function() {
-    $('.ryu-ready').hide();
     $('.ryu-still').show();
+    $('.ryu-cool').hide();
   })
 });
 
@@ -41,6 +42,25 @@ var playHadouken = function(){
     $('#hadouken-sound')[0].load();
     $('#hadouken-sound')[0].play();
 }
+
+// if(1 + 1 === 3){
+//   if(1+ 2 === 3){
+//     for(var i = 0; i < n; i++){
+
+//     }
+//   }
+
+//   if(yoMomma){
+
+//   }
+// }
+
+// if(false){
+
+// }
+
+
+
 
 // var add = function(number1, number2, number3){
 //     return number1 + number2 + number3;   
